@@ -1,0 +1,468 @@
+img#Logo {
+	float: none;
+	max-width: 100%;
+	height: 100%;
+}
+
+body {
+	background: #ffffff;
+	/*background-image: url(images/dragon3.png);*/
+	background-size: 50%;
+	background-color: white;
+    animation-name: fade_out;
+    animation-duration: 5s;
+}
+
+body#aboutBody {
+    background: #ffffff;
+    background-size: 50%;
+    background-color: black;
+    animation-name: fade_in;
+    animation-duration: 1s;
+}
+
+body#galleryBody {
+
+  /* Adjust background color and animation */
+  background: #ffffff;
+  background-color: black;
+  animation-name: fade_in;
+  animation-duration: 1s;
+}
+
+body#inksBody {
+    background: #ffffff;
+    	/*background-image: url(images/tile2.png);*/
+    	background-size: 50%;
+    	background-color: white;
+        animation-name: fade_out;
+        animation-duration: 1s;
+}
+
+body#ceramicsBody {
+    background: #ffffff;
+    	background-size: 50%;
+    	background-color: white;
+        animation-name: fade_out;
+        animation-duration: 1s;
+}
+
+body#contactBody {
+    background: #ffffff;
+    	background-size: 50%;
+    	background-color: black;
+        animation-name: fade_in;
+        animation-duration: 1s;
+    
+}
+
+@keyframes fade_in {
+  0%   {background-color: white;}
+  10%   {background-color: white;}
+  100% {background-color: black;}
+}
+
+@keyframes fade_out {
+  0%   {background-color: black;}
+  10%   {background-color: black;}
+  100% {background-color: white;}
+}
+
+h1 {
+	font-family: "Lucida Console", "Courier New", monospace;
+	font-weight: 100;
+	font-size: 1.5em;
+	height: 75px;
+	line-height: 75px;
+	text-align: center;
+	color: black;
+}
+
+h1 a {
+    text-decoration: none;
+}
+
+h1 a:hover {
+    color: purple;
+}
+
+h2, h3 {
+	font-family: "Lucida Console", "Courier New", monospace;
+	font-weight: 100;
+	font-size: 1.5em;
+	height: 25px;
+	line-height: 25px;
+	color:black;
+	text-align: center;
+}
+
+header {
+	padding: 10px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+p {
+    font-family: "Lucida Console", "Courier New", monospace;
+    	font-weight: 50;
+    	font-size: 1 em;
+    	height: 30px;
+    	line-height: 30px;
+    	color: black;
+    	text-align: center;
+}
+
+p a{
+    text-decoration: none;
+    color: white;
+}
+
+p a:hover{
+    color: purple;
+}
+
+nav {
+    height: 75px;
+    line-height: 75px;
+    background-color: white;
+    animation-name: fade_out;
+    animation-duration: 5s;
+    text-align: center; /* Center the links horizontally */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px; /* Adjust the spacing between each link */
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 1.5em;
+    font-weight: 100;
+}
+
+nav a:hover {
+    color: purple;
+}
+
+/* Media query for smaller screen sizes */
+/*
+@media (max-width: 768px) {
+    nav li {
+        margin-right: 10px;
+    }
+}
+*/
+
+main h1,h2,h3 {
+  color: black;
+}
+
+main#gallerySelection {
+	height: 300px;
+	line-height: 100px;
+	background-color: black;
+	    animation-name: fade_in;
+        animation-duration: 1s;
+}
+
+main#aboutMain {
+  height: 300px;
+	line-height: 20px;
+	background-color: black;
+	    animation-name: fade_in;
+        animation-duration: 1s;
+
+}
+
+main#aboutMain p {
+    font-family: "Lucida Console", "Courier New", monospace;
+	font-size: 0.8em;
+	font-weight: 20;
+	color: white;
+	text-align: center;
+
+}
+
+main#aboutMain h1 {
+	color: white;
+	text-align: center;
+
+}
+
+main#aboutMain a {
+  text-decoration: none;
+    color: gray;
+}
+
+main#aboutMain a:hover {
+  text-decoration: none;
+    color: purple;
+}
+
+main#contactForm {
+  height: 325px;
+	line-height: 20px;
+	background-color: black;
+	    animation-name: fade_in;
+        animation-duration: 1s;
+}
+
+main#contactForm h1,h2{
+  color: white
+}
+
+main#gallerySelection li {
+	font-family: "Lucida Console", "Courier New", monospace;
+	font-size: 1.5em;
+	font-weight: 100;
+	list-style-type: none;
+	text-align: center;
+}
+
+main#gallerySelection a {
+    text-decoration: none;
+    color: white;
+}
+
+main#gallerySelection a:hover {
+    color:purple;
+    display: block;
+}
+
+p {
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: 100;
+  color: black; /* You can adjust the color if needed */
+  font-size: 1em; /* Adjust font size as needed */
+}
+
+a {
+	color: black;
+}
+
+div#home {
+	width: 600px;
+	margin: 0 auto 0 auto;
+	padding: 20px;
+    /*background: rgba(50,50,50,.90);*/
+	overflow: hidden;
+}
+
+div#about {
+	width: 600px;
+	margin: 0 auto 0 auto;
+	padding: none;
+}
+
+div#gallery {
+	width: 600px;
+	margin: 0 auto 0 auto;
+	padding: none;
+	overflow: hidden;
+}
+
+div#inks {
+	margin: 0 auto 0 auto;
+	padding: 20px;
+	overflow: hidden;
+}
+
+div#contact {
+    width: 600px;
+	margin: 0 auto 0 auto;
+	padding: none;
+	overflow: hidden;
+}
+
+/* SLIDESHOW SECTION */
+
+/* Slideshow container */
+* {
+  box-sizing: border-box;
+}
+
+.slideshow-container {
+  max-width: 600px; /* You can adjust this width as needed */
+  height: 500px; /* Fixed height for the container */
+  position: relative;
+  margin: auto;
+}
+
+/* Center the images in the slider and apply object-fit */
+.mySlides img {
+  display: block;
+  width: 100%; /* Make the image scale with the container's width */
+  height: 100%; /* Make the image scale with the container's height */
+  object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+  margin: 0 auto;
+}
+
+/* Show the first slide by default */
+.mySlides:first-child {
+  display: block;
+}
+
+.mySlides p {
+  color: black;
+    font-size: .8em;
+    font-family:"Lucida Console", "Courier New", monospace;
+    font-weight: 100;
+  }
+
+/* Hide the rest of the slides */
+.mySlides:not(:first-child) {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit of see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: black;
+  font-size: 1.5em;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: 100;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: black;
+  font-size: 1em;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: 100;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0px;
+  left: -100px; /* Position the numbertext at the top left */
+  z-index: 2; /* Ensure it's above the image and not hidden */
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  margin-top: 70px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 3s;
+}
+
+@keyframes fade {
+  from {
+    opacity: .1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* END SLIDESHOW SECTION */
+
+
+/*Form Section*/
+form {
+    max-width: 100%;
+    float: none;
+}
+field-set {
+    padding: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background: darkgray;
+}
+legend {
+    font-size: 1.4em;
+    font-family: "Lucida Console", "Courier New", monospace;
+    padding: 0 5px;
+    background: purple;
+    /* border-radius: 5px; */
+}
+label {
+    display: block;
+    font-family: "Lucida Console", "Courier New", monospace;
+    margin-bottom: 5px;
+
+}
+input {
+    margin-bottom: 10px;
+    height: 30px;
+    width: 100%;
+}
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    height: auto;
+    margin-bottom: 5px;
+    margin-right:3px;
+}
+/*attribute selector*/
+input[type="submit"] {
+    width:auto;
+    font-family: "Lucida Console", "Courier New", monospace;
+
+}
+select {
+    margin-bottom:10px;
+
+}
+form ul {
+    list-style-type: none;
+    /*margin-left: 5px; */
+    margin-bottom: 10px;
+}
+textarea {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 10px;
+}
