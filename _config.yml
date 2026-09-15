@@ -1,0 +1,12 @@
+title: Florian Ewing
+description: >-
+  Original ink paintings and drawings by Seattle-based visual artist and
+  designer Florian Ewing.
+url: "https://florianaewing.github.io"
+
+# _data/artwork.yml is loaded automatically as site.data.artwork by Jekyll's
+# GitHub Pages build — no plugins required.
+
+exclude:
+  - README_draft.md
+  - LICENSE.txt

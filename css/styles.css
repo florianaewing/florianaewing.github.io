@@ -1,7 +1,9 @@
-img#Logo {
+#logo {
 	float: none;
-	max-width: 100%;
-	height: 100%;
+	display: inline-block;
+	width: 100%;
+	max-width: 150px;
+	height: auto;
 }
 
 body {
@@ -72,8 +74,12 @@ h1 {
 	font-family: "Lucida Console", "Courier New", monospace;
 	font-weight: 100;
 	font-size: 1.5em;
-	height: 75px;
-	line-height: 75px;
+	min-height: 75px;
+	line-height: 1.3;
+	padding: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	text-align: center;
 	color: black;
 }
@@ -90,10 +96,21 @@ h2, h3 {
 	font-family: "Lucida Console", "Courier New", monospace;
 	font-weight: 100;
 	font-size: 1.5em;
-	height: 25px;
-	line-height: 25px;
+	min-height: 25px;
+	line-height: 1.3;
+	margin: 0.5em 0;
 	color:black;
 	text-align: center;
+}
+
+@media (max-width: 480px) {
+	h1 {
+		font-size: 1.2em;
+	}
+
+	h2, h3 {
+		font-size: 1.15em;
+	}
 }
 
 header {
@@ -105,9 +122,8 @@ header {
 p {
     font-family: "Lucida Console", "Courier New", monospace;
     	font-weight: 50;
-    	font-size: 1 em;
-    	height: 30px;
-    	line-height: 30px;
+    	font-size: 1em;
+    	line-height: 1.5;
     	color: black;
     	text-align: center;
 }
@@ -142,11 +158,14 @@ nav li {
 }
 
 nav a {
+    display: inline-block;
     text-decoration: none;
     color: black;
     font-family: "Lucida Console", "Courier New", monospace;
     font-size: 1.5em;
     font-weight: 100;
+    padding: 12px 10px;
+    line-height: 1.2;
 }
 
 nav a:hover {
@@ -154,20 +173,35 @@ nav a:hover {
 }
 
 /* Media query for smaller screen sizes */
-/*
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+    nav {
+        height: auto;
+        line-height: normal;
+        padding: 8px 0;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     nav li {
-        margin-right: 10px;
+        margin-right: 8px;
+    }
+
+    nav a {
+        font-size: 1.1em;
+        padding: 10px 8px;
     }
 }
-*/
 
 main h1,h2,h3 {
   color: black;
 }
 
 main#gallerySelection {
-	height: 300px;
+	min-height: 300px;
 	line-height: 100px;
 	background-color: black;
 	    animation-name: fade_in;
@@ -175,9 +209,10 @@ main#gallerySelection {
 }
 
 main#aboutMain {
-  height: 300px;
+  min-height: 300px;
 	line-height: 20px;
 	background-color: black;
+	padding: 20px 16px;
 	    animation-name: fade_in;
         animation-duration: 1s;
 
@@ -209,15 +244,24 @@ main#aboutMain a:hover {
 }
 
 main#contactForm {
-  height: 325px;
+  min-height: 325px;
 	line-height: 20px;
 	background-color: black;
+	padding: 20px 16px;
 	    animation-name: fade_in;
         animation-duration: 1s;
 }
 
 main#contactForm h1,h2{
   color: white
+}
+
+main#contactForm h2 {
+  height: auto;
+  line-height: 1.4;
+  font-size: 1.1em;
+  padding: 0 8px;
+  word-wrap: break-word;
 }
 
 main#gallerySelection li {
@@ -250,7 +294,8 @@ a {
 }
 
 div#home {
-	width: 600px;
+	max-width: 600px;
+	width: 100%;
 	margin: 0 auto 0 auto;
 	padding: 20px;
     /*background: rgba(50,50,50,.90);*/
@@ -258,51 +303,76 @@ div#home {
 }
 
 div#about {
-	width: 600px;
+	max-width: 600px;
+	width: 100%;
 	margin: 0 auto 0 auto;
-	padding: none;
+	padding: 0;
 }
 
 div#gallery {
-	width: 600px;
+	max-width: 600px;
+	width: 100%;
 	margin: 0 auto 0 auto;
-	padding: none;
+	padding: 0;
 	overflow: hidden;
 }
 
 div#inks {
+	max-width: 900px;
+	width: 100%;
 	margin: 0 auto 0 auto;
-	padding: 20px;
+	padding: 20px 16px;
 	overflow: hidden;
 }
 
 div#contact {
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
 	margin: 0 auto 0 auto;
-	padding: none;
+	padding: 0;
 	overflow: hidden;
 }
 
 /* SLIDESHOW SECTION */
 
-/* Slideshow container */
+/* Slideshow container — width is fluid (up to 900px, set by div#inks),
+   height is NOT fixed: it grows to fit whatever aspect ratio each image
+   has, so nothing gets cropped or stretched on any screen size. */
 * {
   box-sizing: border-box;
 }
 
 .slideshow-container {
-  max-width: 600px; /* You can adjust this width as needed */
-  height: 500px; /* Fixed height for the container */
-  position: relative;
+  width: 100%;
   margin: auto;
 }
 
-/* Center the images in the slider and apply object-fit */
+.slide-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.slide-track {
+  flex: 1 1 auto;
+  min-width: 0; /* allow flex child to shrink below its content size */
+}
+
+.slide-media {
+  width: 100%;
+  text-align: center;
+}
+
+/* Scale the image to fit without cropping or stretching, on any
+   aspect ratio (portrait, landscape, square). */
 .mySlides img {
-  display: block;
-  width: 100%; /* Make the image scale with the container's width */
-  height: 100%; /* Make the image scale with the container's height */
-  object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+  display: inline-block;
+  max-width: 100%;
+  max-height: 65vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   margin: 0 auto;
 }
 
@@ -313,83 +383,125 @@ div#contact {
 
 .mySlides p {
   color: black;
-    font-size: .8em;
-    font-family:"Lucida Console", "Courier New", monospace;
-    font-weight: 100;
-  }
+  font-size: .9em;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: 100;
+  max-width: 60ch;
+  margin: 8px auto;
+  line-height: 1.4;
+}
 
 /* Hide the rest of the slides */
 .mySlides:not(:first-child) {
   display: none;
 }
 
-/* Next & previous buttons */
+/* Next & previous buttons: fixed circular tap targets, always sized to
+   meet the ~44px minimum touch-target guideline regardless of screen
+   width. They sit beside the slide track (not overlaid on the image),
+   so they can't cover image content or captions on narrow screens. */
 .prev, .next {
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
   color: black;
+  background-color: rgba(0, 0, 0, 0.06);
+  border: none;
+  border-radius: 50%;
   font-weight: bold;
   font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+  font-family: inherit;
+  transition: background-color 0.3s ease;
   user-select: none;
 }
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+.prev:hover, .next:hover,
+.prev:focus-visible, .next:focus-visible {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-/* On hover, add a black background color with a little bit of see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
+/* Caption text — lives in normal document flow below the image instead
+   of being absolutely positioned over it, so it never overlaps the
+   artwork or gets clipped at narrow widths. */
+.caption {
   color: black;
-  font-size: 1.5em;
   font-family: "Lucida Console", "Courier New", monospace;
   font-weight: 100;
-  position: absolute;
   width: 100%;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 16px;
 }
 
-/* Number text (1/3 etc) */
-.numbertext {
-  color: black;
+.caption h2 {
+  font-size: 1.3em;
+  height: auto;
+  line-height: 1.3;
+  margin: 0 0 4px;
+}
+
+.caption h3 {
   font-size: 1em;
+  height: auto;
+  line-height: normal;
+  margin: 0 0 8px;
+}
+
+.intro-caption {
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Piece counter (e.g. "Piece 3 of 13") */
+.numbertext {
+  color: #555;
+  font-size: 0.85em;
   font-family: "Lucida Console", "Courier New", monospace;
   font-weight: 100;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0px;
-  left: -100px; /* Position the numbertext at the top left */
-  z-index: 2; /* Ensure it's above the image and not hidden */
+  text-align: center;
+  margin-bottom: 8px;
 }
 
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  margin-top: 70px;
-  background-color: #bbb;
-  border-radius: 50%;
+/* Buy button / availability status */
+.buy-button {
   display: inline-block;
-  transition: background-color 0.6s ease;
+  margin-top: 8px;
+  padding: 12px 20px;
+  min-height: 44px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 1em;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-.active, .dot:hover {
-  background-color: #717171;
+.buy-button:hover,
+.buy-button:focus-visible {
+  background-color: purple;
+  color: white;
+}
+
+.status-label {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 1em;
+}
+
+.status-label.sold {
+  color: #b00020;
+}
+
+.status-label.unavailable,
+.status-label.pending {
+  color: #555;
 }
 
 /* Fading animation */
@@ -404,6 +516,38 @@ div#contact {
   }
   to {
     opacity: 1;
+  }
+}
+
+/* Tablet and phone tuning */
+@media (max-width: 900px) {
+  .mySlides img {
+    max-height: 55vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-row {
+    gap: 2px;
+  }
+
+  .caption h2 {
+    font-size: 1.1em;
+  }
+
+  .mySlides p,
+  .status-label,
+  .buy-button {
+    font-size: 0.9em;
+  }
+}
+
+/* Short/landscape viewports: cap image height by viewport height instead
+   of width so captions and buttons stay reachable without excessive
+   scrolling. */
+@media (max-height: 500px) and (orientation: landscape) {
+  .mySlides img {
+    max-height: 45vh;
   }
 }
 
